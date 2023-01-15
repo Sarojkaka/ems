@@ -401,15 +401,15 @@ public class EmployeeDaoDB implements EmployeeDaoInterface {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 
-			String updateQuery = "UPDATE department set dep_name=?, dep_details=? where dep_id=?";
+			String updateQuery = "UPDATE department SET dep_details = ? WHERE dep_id = ?";    
 			System.out.println(updateQuery);
 
 			PreparedStatement statement = con.prepareStatement(updateQuery);
-			statement.setString(1, dep.getDepartment());
-			statement.setString(2, dep.getDetails());
+			//statement.setString(1, dep.getDepartment());
+			statement.setString(1, dep.getDetails());
 
 			// Set id for where clause
-			statement.setInt(6, dep.getDepId());
+			statement.setInt(2, dep.getDepId());
 
 			System.out.println(statement.toString());
 
@@ -446,7 +446,7 @@ public class EmployeeDaoDB implements EmployeeDaoInterface {
 				Department dep = new Department();
 				dep.setDepId(results.getInt(1));;
 				dep.setDepartment(results.getString(2));
-				dep.setDetails(results.getString(2));
+				dep.setDetails(results.getString(3));
 
 
 				departmentList.add(dep);
