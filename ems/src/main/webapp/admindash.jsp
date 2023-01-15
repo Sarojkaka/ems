@@ -23,11 +23,11 @@
 			<li><a href="/ems/employee"> <i class='bx bx-user'></i> <span
 					class="links_name">Employee</span>
 			</a></li>
-			<li><a href="#"> <i class='bx bx-list-ul'></i> <span
-					class="links_name">Schedule</span>
+			<li><a href="/ems/department"> <i class='bx bx-list-ul'></i> <span
+					class="links_name">Department</span>
 			</a></li>
 			<li><a href="#"> <i class='bx bx-pie-chart-alt-2'></i> <span
-					class="links_name">Time Clocks</span>
+					class="links_name">Schedule</span>
 			</a></li>
 			<li><a href="#"> <i class='bx bx-coin-stack'></i> <span
 					class="links_name">Payroll</span>

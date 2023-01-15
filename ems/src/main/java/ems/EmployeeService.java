@@ -5,14 +5,15 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class EmployeeService {
-	
+
 	public List<Employee> viewAll() throws IOException {
 		EmployeeDaoInterface dao = new EmployeeDaoDB();
 		return dao.viewAll();
 	}
-	
+
 	/**
 	 * Search by ID
+	 * 
 	 * @param id
 	 * @return
 	 * @throws IOException
@@ -21,7 +22,7 @@ public class EmployeeService {
 //		EmployeeDaoInterface dao = new EmployeeDaoDB();
 //		return dao.searchById(id);
 //	}
-	
+
 	/**
 	 * Search employee by id
 	 * 
@@ -30,27 +31,27 @@ public class EmployeeService {
 	 * @throws IOException
 	 */
 	public Employee searchById(Integer id) throws IOException {
-		
+
 		EmployeeDaoInterface dao = new EmployeeDaoDB();
-		
+
 		return dao.searchById(id);
 	}
-	
+
 	public boolean removeEmployee(String id) throws IOException {
 		System.out.println("Enter employee id::");
-		
-		//		Employee emp = this.searchById(id);
-		//		if (emp == null) {
-		//			System.out.println("Employee id is not valid!!!");
-		//			return false;
-		//		}
-		
+
+		// Employee emp = this.searchById(id);
+		// if (emp == null) {
+		// System.out.println("Employee id is not valid!!!");
+		// return false;
+		// }
+
 		EmployeeDaoInterface dao = new EmployeeDaoDB();
 		dao.removeEmployee(id);
-		
+
 		return false;
 	}
-	
+
 	/**
 	 * Method to view current employee
 	 */
@@ -58,9 +59,9 @@ public class EmployeeService {
 		if (emp != null) {
 			System.out.println(emp);
 		}
-		
+
 	}
-	
+
 	/**
 	 * Edit employee profile
 	 * 
@@ -72,43 +73,39 @@ public class EmployeeService {
 		dao.editEmployee(emp);
 		System.out.println("Edited Successfully.");
 	}
-	
 
-	
 	public Employee addEmployee(Employee emp) throws IOException, SQLException, ClassNotFoundException {
 		EmployeeDaoInterface dao = new EmployeeDaoDB();
 		dao.addEmployee(emp);
 		System.out.println("Employee added successfully!");
 		return emp;
 	}
-	
+
 	public Employee searchByUsername(String username) {
 		EmployeeDaoInterface dao = new EmployeeDaoDB();
 		Employee emp = null;
 		try {
 			emp = dao.searchByUsername(username);
-		}
-		catch (IOException e) {
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			System.out.println("Some issue occurred");
 			e.printStackTrace();
 		}
 		return emp;
 	}
-	
+
 	public boolean checkIfUserNameExists(String username) {
-		//			for (Employee emp : EmployeeDao.employeeList) {
-		//				if (emp != null && emp.getUsername().equals(username)) {
-		//					return true;
-		//				}
-		//			}
-		
+		// for (Employee emp : EmployeeDao.employeeList) {
+		// if (emp != null && emp.getUsername().equals(username)) {
+		// return true;
+		// }
+		// }
+
 		EmployeeDaoInterface dao = new EmployeeDaoDB();
 		Employee emp = null;
 		try {
 			emp = dao.searchByUsername(username);
-		}
-		catch (IOException e) {
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			System.out.println("Some issue occurred");
 			e.printStackTrace();
@@ -119,5 +116,5 @@ public class EmployeeService {
 			return true;
 		}
 	}
-	
+
 }

@@ -19,4 +19,19 @@ public void editEmployee(Employee emp) throws IOException;
 	public Employee searchByUsername(String username) throws IOException;
 	
 	public void removeEmployee(String id) throws IOException;
+
+	public Department addDepartment(Department dep)throws IOException, SQLException, ClassNotFoundException;
+
+	public Department searchByDepartmentname(String department)throws IOException, SQLException, ClassNotFoundException;
+
+	public void editDepartment(Department dep)throws IOException, SQLException, ClassNotFoundException;
+
+	public List<Department> viewAllDepartment()throws IOException;
+
+	public Department searchByDepId(Integer id)throws IOException;
+
+	public void removeDepartment(String id)throws IOException;
+	
+	
+
 }
