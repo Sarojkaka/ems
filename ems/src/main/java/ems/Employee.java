@@ -18,12 +18,24 @@ public class Employee {
 	
 	private EmployeeType employeeType;
 	
+	private Integer depId;
+	
+	private String depname;
+	
+	public String getDepname() {
+		return depname;
+	}
+
+	public void setDepname(String depname) {
+		this.depname = depname;
+	}
+
 	public Employee() {
 		super();
 	}
 	
 	public Employee(Integer id, String firstName, String lastName, Gender gender, String username, String password,
-	    EmployeeType employeeType) {
+	    EmployeeType employeeType, Integer depId, String depname) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
@@ -32,6 +44,8 @@ public class Employee {
 		this.username = username;
 		this.password = password;
 		this.employeeType = employeeType;
+		this.depId = depId;
+		this.depname = depname;
 	}
 	
 	public Employee(String firstName, String lastName, Gender gender, String username, String password,
@@ -43,8 +57,24 @@ public class Employee {
 		this.username = username;
 		this.password = password;
 		this.employeeType = employeeType;
+		//this.depId = depId;
 	}
 	
+	public Employee(String firstName2, String lastName2, Gender g, String username2, String password2,
+			EmployeeType type, String depId2) {
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+	public Integer getDepId() {
+		return depId;
+	}
+
+	public void setDepId(Integer depId) {
+		this.depId = depId;
+	}
+
 	public Integer getId() {
 		return id;
 	}
@@ -104,7 +134,7 @@ public class Employee {
 	@Override
 	public String toString() {
 		return "id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", gender=" + gender + ", username="
-		        + username + ", password=" + password + ", employeeType=" + employeeType;
+		        + username + ", password=" + password + ", employeeType=" + employeeType+ ", depId=" + depId;
 	}
 	
 	@Override

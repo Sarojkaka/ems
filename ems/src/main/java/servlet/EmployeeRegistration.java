@@ -102,11 +102,13 @@ public class EmployeeRegistration extends HttpServlet {
 		String gender = request.getParameter("gender");
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
+		Integer depId = (Integer.parseInt(request.getParameter("depId")));
 		
 		EmployeeType type = EmployeeType.USER;
 		Gender g = Gender.getByValue(gender);
 		
 		Employee emp1 = new Employee(firstName, lastName, g, username, password, type);
+		emp1.setDepId(depId);
 		
 		EmployeeService emService = new EmployeeService();
 		

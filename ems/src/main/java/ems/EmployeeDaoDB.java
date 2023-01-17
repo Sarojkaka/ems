@@ -26,7 +26,7 @@ public class EmployeeDaoDB implements EmployeeDaoInterface {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 
-			String updateQuery = "UPDATE employee set first_name=?, last_name=?, gender=?, password=?, employee_type=? where emp_id=?";
+			String updateQuery = "UPDATE employee set first_name=?, last_name=?, gender=?, password=? where emp_id=?";
 			System.out.println(updateQuery);
 
 			PreparedStatement statement = con.prepareStatement(updateQuery);
@@ -34,7 +34,7 @@ public class EmployeeDaoDB implements EmployeeDaoInterface {
 			statement.setString(2, emp.getLastName());
 			statement.setString(3, emp.getGender().value);
 			statement.setString(4, emp.getPassword());
-			statement.setString(5, emp.getEmployeeType().value);
+			//statement.setString(5, emp.getEmployeeType().value);
 
 			// Set id for where clause
 			statement.setInt(6, emp.getId());
@@ -62,7 +62,8 @@ public class EmployeeDaoDB implements EmployeeDaoInterface {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 
-			String query = "SELECT * from employee";
+			String query = "Select e.emp_id,e.first_name,e.last_name,e.gender,e.username,e.password,e.employee_type,e.dep_id,d.dep_name from employee e \n"
+					+ "left join department d on d.dep_id = e.dep_id";
 
 			statement = con.createStatement();
 
@@ -78,6 +79,8 @@ public class EmployeeDaoDB implements EmployeeDaoInterface {
 				emp.setUsername(results.getString(5));
 				emp.setPassword(results.getString(6));
 				emp.setEmployeeType(EmployeeType.valueOf(results.getString(7)));
+				emp.setDepId(results.getInt(8));
+				emp.setDepname(results.getString(9));
 
 				employeeList.add(emp);
 			}
@@ -204,8 +207,8 @@ public class EmployeeDaoDB implements EmployeeDaoInterface {
 
 		Connection con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 
-		String insertQuery = "INSERT INTO employee (first_name, last_name, gender, username, password, employee_type)"
-				+ "value (?, ?, ?, ?, ?, ?)";
+		String insertQuery = "INSERT INTO employee (first_name, last_name, gender, username, password, employee_type, dep_id)"
+				+ "value (?, ?, ?, ?, ?, ?, ?)";
 
 		System.out.println(insertQuery);
 
@@ -213,11 +216,12 @@ public class EmployeeDaoDB implements EmployeeDaoInterface {
 
 		PreparedStatement statement = con.prepareStatement(insertQuery);
 		statement.setString(1, emp.getFirstName());
-		statement.setString(5, emp.getPassword());
-		statement.setString(6, emp.getEmployeeType().value);
 		statement.setString(2, emp.getLastName());
 		statement.setString(3, emp.getGender().value);
 		statement.setString(4, emp.getUsername());
+		statement.setString(5, emp.getPassword());
+		statement.setString(6, emp.getEmployeeType().value);
+		statement.setInt(7, emp.getDepId());
 
 		int resultValue = statement.executeUpdate();
 
@@ -288,7 +292,7 @@ public class EmployeeDaoDB implements EmployeeDaoInterface {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 
-			String query = "DELETE from employee where emp_id=?";
+			String query = "DELETE from employee where emp_id=? and not emp_id='1'";
 
 			statement = con.prepareStatement(query);
 

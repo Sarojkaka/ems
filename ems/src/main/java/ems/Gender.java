@@ -3,10 +3,19 @@ package ems;
 public enum Gender {
 	MALE("MALE"),
 	FEMALE("FEMALE"),
-	OTHERS("OTHERS");
+	OTHERS("OTHERS"),
+	TEST("TEST");
 	
-	String value;
+	public String value;
 	
+	public String getValue() {
+		return value;
+	}
+
+	public void setValue(String value) {
+		this.value = value;
+	}
+
 	Gender(String value) {
 		this.value = value;
 	}
