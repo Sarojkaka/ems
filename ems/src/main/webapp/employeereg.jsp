@@ -149,7 +149,7 @@ form .input-box span.details {
 				}
 				List<Gender>genders= Arrays.asList(Gender.values());
 				pageContext.setAttribute("genders", genders);
-				out.print(genders);
+
 				%>
 				
 
@@ -171,12 +171,7 @@ form .input-box span.details {
 						<div for="gender">
 							<span class="gender-title" for="gender">Gender</span>
 							<div class="category">
-								<select name="gender" value="${gender}" required="required">
-									<option value="">Select Gender</option>
-									<option value="MALE">MALE</option>
-									<option value="FEMALE">FEMALE</option>
-									<option value="OTHERS">OTHERS</option>
-								</select>
+								
 								<select name="gender" value="${gender}" required="required">
 								<option value="">Select Gender</option>
 								
@@ -243,7 +238,7 @@ form .input-box span.details {
 							if (request.getAttribute("id") != null && request.getAttribute("id") != "") {
 								out.print(" <button type='submit' class='registerbtn'>Update</button>");
 							} else {
-								out.print(" <button type='submit' class='registerbtn'>Register</button>");
+								out.print(" <button type='submit' class='registerbtn'>Add Employee</button>");
 							}
 							%>
 						</div>

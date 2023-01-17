@@ -3,8 +3,7 @@ package ems;
 public enum Gender {
 	MALE("MALE"),
 	FEMALE("FEMALE"),
-	OTHERS("OTHERS"),
-	TEST("TEST");
+	OTHERS("OTHERS");
 	
 	public String value;
 	

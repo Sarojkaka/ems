@@ -114,7 +114,7 @@ button:hover {
 		
 	%>
 		<table>
-			<a href="/ems/register"><button class="btn-register">Register</button></a>
+			<a href="/ems/register"><button class="btn-register">Add Employee</button></a>
 			<br>
 			<br>
 			<br>
