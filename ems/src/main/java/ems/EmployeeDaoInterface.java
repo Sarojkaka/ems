@@ -32,6 +32,10 @@ public void editEmployee(Employee emp) throws IOException;
 
 	public void removeDepartment(String id)throws IOException;
 	
+	public Employee searchByEmployeename(String firstname, String lastname) throws IOException;
 	
+	public List<Schedule> viewAllSchedule()throws IOException;
+
+	public Schedule addSchedule(Schedule sch)throws IOException, SQLException, ClassNotFoundException;
 
 }

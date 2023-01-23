@@ -7,6 +7,72 @@
     <meta charset="UTF-8">
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="admincss.css">
+    <style>
+
+#week-schedule {
+  margin: auto;
+  width: 1100px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 1fr repeat(5, auto) ;
+  gap: 3px;
+  font-family: 'Raleway', sans-serif;
+}
+.schedule-day {
+  text-align: center;
+  background-color: lightgrey; 
+  border-radius: 7px;
+}
+
+.schedule-day h1 {
+  margin-block-start: 3px;
+  margin-block-end: 3px;
+  font-weight: 400;
+  font-size: 30px;
+}
+.all-shifts {
+  padding-top: 7px;
+  text-align: center;
+}
+.employee-shift {
+  border-radius: 7px;
+  margin-top:5px;
+}
+.employee-shift h2 {
+  margin-block-start: 3px;
+  margin-block-end: 3px;
+  font-size: 20px;
+  font-weight: 700;
+}
+.employee-shift p {
+  margin-block-start: 3px;
+  margin-block-end: 3px;
+}
+.blue {
+  background-color: #6DD3CE;
+  color: ;
+}
+.red {
+  background-color: #A13D63;
+  color: #fff;
+}
+.green {
+  background-color: #C8E9A0;
+}
+.orange {
+  background-color: #F7A278;
+}
+.purple {
+  background-color: #351E29;
+  color: #fff;
+}
+.empty {
+  border-style: dotted;
+  border-width: 3px;
+  background-color: #fff;
+  color: red;
+}
+</style>
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,7 +92,7 @@
 			<li><a href="/ems/department"> <i class='bx bx-list-ul'></i> <span
 					class="links_name">Department</span>
 			</a></li>
-			<li><a href="#"> <i class='bx bx-pie-chart-alt-2'></i> <span
+			<li><a href="/ems/schedulelist"> <i class='bx bx-pie-chart-alt-2'></i> <span
 					class="links_name">Schedule</span>
 			</a></li>
 			<li><a href="#"> <i class='bx bx-coin-stack'></i> <span
@@ -50,13 +116,13 @@
         <input type="text" placeholder="Search...">
         <i class='bx bx-search' ></i>
       </div>
-      <div class="profile-details">
-        <!--<img src="images/profile.jpg" alt="">-->
-        <span class="admin_name"><%
- Employee emp = (Employee) request.getSession().getAttribute("user");
- out.print(emp.getFirstName() + " " + emp.getLastName());%></span>
-        <i class='bx bx-chevron-down' ></i>
-      </div>
+<!--       <div class="profile-details"> -->
+<!--         <img src="images/profile.jpg" alt=""> -->
+<%--         <span class="admin_name"><% --%>
+//  Employee emp = (Employee) request.getSession().getAttribute("user");
+<%--  out.print(emp.getFirstName() + " " + emp.getLastName());%></span> --%>
+<!--         <i class='bx bx-chevron-down' ></i> -->
+<!--       </div> -->
     </nav>
   </section>
 

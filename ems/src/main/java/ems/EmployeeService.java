@@ -11,6 +11,7 @@ public class EmployeeService {
 		return dao.viewAll();
 	}
 
+	
 	/**
 	 * Search by ID
 	 * 
@@ -86,6 +87,19 @@ public class EmployeeService {
 		Employee emp = null;
 		try {
 			emp = dao.searchByUsername(username);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.out.println("Some issue occurred");
+			e.printStackTrace();
+		}
+		return emp;
+	}
+	
+	public Employee searchByEmployeername(String firstname, String lastname) {
+		EmployeeDaoInterface dao = new EmployeeDaoDB();
+		Employee emp = null;
+		try {
+			emp = dao.searchByEmployeename(firstname, lastname);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			System.out.println("Some issue occurred");

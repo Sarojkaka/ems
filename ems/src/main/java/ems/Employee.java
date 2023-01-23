@@ -155,4 +155,5 @@ public class Employee {
 		        && Objects.equals(id, other.id) && Objects.equals(lastName, other.lastName)
 		        && Objects.equals(password, other.password) && Objects.equals(username, other.username);
 	}
+
 }

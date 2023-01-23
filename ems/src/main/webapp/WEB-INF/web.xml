@@ -69,4 +69,34 @@
     <servlet-name>DepartmentListServlet</servlet-name>
     <url-pattern>/DepartmentListServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SearchEmployeeServlet</display-name>
+    <servlet-name>SearchEmployeeServlet</servlet-name>
+    <servlet-class>servlet.SearchEmployeeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchEmployeeServlet</servlet-name>
+    <url-pattern>/SearchEmployeeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Schedulereg</display-name>
+    <servlet-name>Schedulereg</servlet-name>
+    <servlet-class>servlet.Schedulereg</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Schedulereg</servlet-name>
+    <url-pattern>/Schedulereg</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Schedulelist</display-name>
+    <servlet-name>Schedulelist</servlet-name>
+    <servlet-class>servlet.Schedulelist</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Schedulelist</servlet-name>
+    <url-pattern>/Schedulelist</url-pattern>
+  </servlet-mapping>
 </web-app>
